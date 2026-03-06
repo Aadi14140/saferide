@@ -1,3 +1,5 @@
+import BusMap from "../components/BusMap";
+
 function ParentPortal() {
   return (
     <div style={{ padding: "20px", width: "100%" }}>
@@ -73,12 +75,12 @@ function ParentPortal() {
           borderRadius: "10px"
         }}>
           <h3>Live Bus Location</h3>
-          <p>Bus currently near NH65</p>
+          <BusMap />
         </div>
 
         {/* Events */}
         <div style={{
-          background: "#f1f5f9",
+          background: "#81ccd6",
           padding: "20px",
           borderRadius: "10px"
         }}>
