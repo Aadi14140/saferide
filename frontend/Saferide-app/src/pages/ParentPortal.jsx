@@ -17,9 +17,10 @@ function ParentPortal() {
         <p>Route A • 3 stops remaining</p>
       </div>
 
-      {/* Stats Cards */}
+      {/* Dashboard Grid */}
       <div style={{
-        display: "flex",
+        display: "grid",
+        gridTemplateColumns: "repeat(3, 1fr)",
         gap: "20px",
         marginTop: "20px"
       }}>
@@ -28,8 +29,7 @@ function ParentPortal() {
           background: "#22c55e",
           color: "white",
           padding: "20px",
-          borderRadius: "10px",
-          width: "200px"
+          borderRadius: "10px"
         }}>
           <h3>Children Onboard</h3>
           <h2>2</h2>
@@ -39,8 +39,7 @@ function ParentPortal() {
           background: "#3b82f6",
           color: "white",
           padding: "20px",
-          borderRadius: "10px",
-          width: "200px"
+          borderRadius: "10px"
         }}>
           <h3>Stops Remaining</h3>
           <h2>3</h2>
@@ -50,8 +49,7 @@ function ParentPortal() {
           background: "#f59e0b",
           color: "white",
           padding: "20px",
-          borderRadius: "10px",
-          width: "200px"
+          borderRadius: "10px"
         }}>
           <h3>Delay</h3>
           <h2>+12 min</h2>
@@ -59,29 +57,35 @@ function ParentPortal() {
 
       </div>
 
-      {/* Live Tracking Section */}
+      {/* Bottom Section */}
       <div style={{
-        marginTop: "30px",
-        background: "#1e293b",
-        color: "white",
-        padding: "20px",
-        borderRadius: "10px"
+        display: "grid",
+        gridTemplateColumns: "2fr 1fr",
+        gap: "20px",
+        marginTop: "30px"
       }}>
-        <h3>Live Bus Location</h3>
-        <p>Bus is currently near NH65</p>
-      </div>
 
-      {/* Events Section */}
-      <div style={{
-        marginTop: "20px",
-        background: "#f1f5f9",
-        padding: "20px",
-        borderRadius: "10px"
-      }}>
-        <h3>Today's Events</h3>
+        {/* Live Tracking */}
+        <div style={{
+          background: "#1e293b",
+          color: "white",
+          padding: "20px",
+          borderRadius: "10px"
+        }}>
+          <h3>Live Bus Location</h3>
+          <p>Bus currently near NH65</p>
+        </div>
 
-        <p>✔ Arjun boarded – 7:52 AM</p>
-        <p>✔ Priya boarded – 7:42 AM</p>
+        {/* Events */}
+        <div style={{
+          background: "#f1f5f9",
+          padding: "20px",
+          borderRadius: "10px"
+        }}>
+          <h3>Today's Events</h3>
+          <p>✔ Arjun boarded – 7:52 AM</p>
+          <p>✔ Priya boarded – 7:42 AM</p>
+        </div>
 
       </div>
 
