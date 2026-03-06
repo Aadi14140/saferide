@@ -1,8 +1,14 @@
+import Sidebar from "../components/Sidebar";
+
 export default function ParentPortal() {
     return(
-        <div>
-            <h1>SafeRide Parent Portal</h1>
-            <p>Welcome to the parent dashboard</p>
+        <div style={{display:"flex"}}>
+            <Sidebar />
+
+            <div style={{marginLeft:"20px"}}>
+                <h1>Parent Dashboard</h1>
+            </div>
+            
         </div>
     )
 }
