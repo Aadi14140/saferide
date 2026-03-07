@@ -1,35 +1,38 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import ParentPortal from "./pages/ParentPortal";
+import Settings from "./components/Settings";
+import { Routes, Route } from "react-router-dom";
+import ParentLayout from "./components/ParentLayout";
+import LiveTracking from "./components/LiveTracking";
+import { useEffect } from "react";
 
 function App() {
-  const [count, setCount] = useState(0)
+  useEffect(() => {
+    const savedDarkMode = localStorage.getItem("darkMode");
+
+    if (savedDarkMode === "true") {
+      document.body.style.backgroundColor = "#0f172a";
+      document.body.style.color = "white";
+    } else {
+    document.body.style.backgroundColor = "white";
+    document.body.style.color = "black";
+    }
+}, []);
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    
+      <Routes>
+        <Route path="/" element={<ParentLayout />}>
+          <Route index element={<ParentPortal />} />
+          <Route path="/tracking" element={<LiveTracking />} />
+          <Route path="/history" element={<h1>Trip History</h1>} />
+          <Route path="/alerts" element={<h1>Alerts</h1>} />
+          <Route path="/settings" element={<Settings />} />
+        </Route>
+      </Routes>
+    
+
+    
+  );
 }
 
-export default App
+export default App;
