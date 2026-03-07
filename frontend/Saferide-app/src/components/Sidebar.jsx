@@ -1,6 +1,6 @@
 import { FaTachometerAlt, FaBus, FaHistory, FaBell } from "react-icons/fa";
-import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
+import { FaCog } from "react-icons/fa";
 
 function Sidebar() {
   return (
@@ -42,6 +42,13 @@ function Sidebar() {
           <NavLink to="/alerts" style={({ isActive })=> ({ display:"flex", alignItems:"center", gap:"10px", color:"white", textDecoration:"none", padding:"10px", borderRadius:"6px", background: isActive ?  "#1e293b": "transparent"})}>
           <FaBell />
           Alerts
+          </NavLink>
+        </li>
+
+        <li style={{ marginBottom: "20px" }}>
+          <NavLink to="/settings" style={({ isActive })=> ({ display:"flex", alignItems:"center", gap:"10px", color:"white", textDecoration:"none", padding:"10px", borderRadius:"6px", background: isActive ?  "#1e293b": "transparent"})}>
+          <FaCog />
+          Settings
           </NavLink>
         </li>
 
